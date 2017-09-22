@@ -1,0 +1,63 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts> 
+    <include file="struts-default.xml"/> 
+    <package name="tutorial" extends="struts-default"> 
+       <action name="searchbook" class="tutorial.FindbyAuthor" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="NotExist">/NotAuthExist.jsp</result> 
+           <result name="success">/ResultofIndex.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+       </action>
+       <action name="showbook" class="tutorial.ShowDetails" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="ExistError">/NoEntriesError.jsp</result> 
+           <result name="success">/IndexBook.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+       </action>
+       <action name="deletebook" class="tutorial.DeLeteBook" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="ExistError">/NoEntriesError.jsp</result> 
+           <result name="success">/ComDelete.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+       </action>
+       <action name="addbook" class="tutorial.AddBook" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="Repeat">/Error2.jsp</result>
+           <result name="success">/ComDelete.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+           <result name="typeerror">/TypeError.jsp</result>
+       </action>
+       <action name="update" class="tutorial.ConfirmUpdateBook" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="success">/UpdateBook.jsp</result>
+       </action>
+       <action name="updatea" class="tutorial.ConfirmUpdateAuthor" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="success">/UpdateAuthor.jsp</result>
+       </action>
+       <action name="updatebook" class="tutorial.UpdateBook" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="ExistError">/NoEntriesError.jsp</result> 
+           <result name="success">/ComDelete.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+           <result name="typeerror">/TypeError.jsp</result>
+       </action>
+       <action name="updateauthor" class="tutorial.UpdateAuthor" method="execute"> 
+           <result name="empty">/Error.jsp</result> 
+           <result name="ExistError">/NoEntriesError.jsp</result>
+           <result name="success">/ComAuthorOperation.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+           <result name="typeerror">/TypeError.jsp</result>
+       </action>
+       <action name="ListAllBooks" class="tutorial.ListBookInf" method="execute"> 
+           <result name="success">/ListAllBooks.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+       </action>
+       <action name="ListAllAuthors" class="tutorial.ListAuthorInf" method="execute"> 
+           <result name="success">/ListAllAuthor.jsp</result>
+           <result name="error">/DataLinkError.jsp</result>
+       </action>
+    </package> 
+</struts>
